@@ -21,7 +21,6 @@ class Articles(Resource):
             return {'message': "Can't get articles"}, 400
         return items, 200
 
-
 api.add_resource(Articles, '/article/<string:id>')
 
 
@@ -39,6 +38,9 @@ def craw():
     ).start()
     return "Crawling"
 
+@app.route('/hello')
+def Hello():
+    return "Hello"
 
 if __name__ == '__main__':
     app.run(debug=True)

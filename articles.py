@@ -347,6 +347,7 @@ def getLastId():
 #     saveNews(crawNewsData("https://vnexpress.net",link))
 #     saveArticles()
 # deleleOutdateArticles(0)
-# b=getLastId()
+#     b=getNewsFromId(getLastId())
+#     print(b)
 # aaa=getNewsById(90-15,90)
 # print(aaa)
