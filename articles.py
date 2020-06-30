@@ -412,6 +412,8 @@ def getArticleById(id):
             "time2": row[10],
         })
     db.close()
+    if dataNews == []:
+        return []
     return dataNews[0]
 
 def searchArticles(info, offset):
