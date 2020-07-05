@@ -9,7 +9,8 @@ from constance import constances
 
 BASE_URL = "https://vnexpress.net"
 PATH_TN = "/tin-nong"
-LIST_PATH = ["/thoi-su-p", "/the-gioi-p", "/kinh-doanh/p", "/giai-tri-p", "/the-thao/p", "/phap-luat-p", "/giao-duc-p", "/suc-khoe/p",
+PATH_GT = "/giai-tri-p"
+LIST_PATH = ["/thoi-su-p", "/the-gioi-p", "/kinh-doanh/p", "/the-thao/p", "/giai-tri-p", "/phap-luat-p", "/giao-duc-p", "/suc-khoe/p",
              "/doi-song/p", "/du-lich/p", "/khoa-hoc-p", "/so-hoa/p", "/oto-xe-may-p"]
 
 
@@ -195,7 +196,6 @@ def saveArticles(base_url, path):
     #     db.commit()
     # except:
     #     db.rollback()
-
     # save to db
     for index, item in enumerate(data[::-1]):
         # if index==1:
@@ -506,6 +506,11 @@ def crawlAll(number):
             path = path+"{}".format(index)
             saveArticles(BASE_URL, path)
     print("END")
+
+def crawlCategory(path,number):
+    for index in range(1, number+1)[::-1]:
+            path = path+"{}".format(index)
+            saveArticles(BASE_URL, path)
 
 
 def crawlHotNews():

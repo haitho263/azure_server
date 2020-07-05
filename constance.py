@@ -19,6 +19,6 @@ class constances:
     PASSWORD = "Aa@123456"
     DATABASE = "datatrends"
     ARTICLES_PER_LOAD = 16
-    
+
     TIME_BETWEEN_CRAWL = 10800
     DELETE_AFTER = 3

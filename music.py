@@ -136,7 +136,8 @@ def getMusicByCountry(country):
                 "singer": row[5],
                 "composer": row[6],
                 "album": row[7],
-                "release_year": row[8]
+                "release_year": row[8],
+                "qualities": row[10]
             })
     except:
         return []
