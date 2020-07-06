@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 import html
 import requests
 import mysql.connector
-
+import ast
 from constance import constances
 
 BASE_URL = "https://chiasenhac.vn"
@@ -127,6 +127,7 @@ def getMusicByCountry(country):
         cursor.execute(query)
         records = cursor.fetchall()
         for row in records:
+            qualities = ast.literal_eval(row[10])
             data.append({
                 "id": row[0],
                 "name": row[1],
@@ -137,7 +138,7 @@ def getMusicByCountry(country):
                 "composer": row[6],
                 "album": row[7],
                 "release_year": row[8],
-                "qualities": row[10]
+                "qualities": qualities
             })
     except:
         return []
